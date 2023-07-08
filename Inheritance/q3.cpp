@@ -15,7 +15,7 @@ class Marks
 {
     protected:
         int *rollNumber;
-        string **name;
+        string *name;
         float *stuPhysics;
         float *stuChem;
         float *stuMaths;
@@ -24,18 +24,14 @@ class Marks
     public:
         void getData()
         {
-            cout<<"Enter the number of students in Physics :";
+            cout<<"Enter the total number of students :";
             cin>>totStudents;
 
-            rollNumber = new int*[totStudents];
-            stuPhysics = new int*[totStudents];
-            stuChem = new int*[totStudents];
-            stuMaths = new int*[totStudents];
-            name = new int*[totStudents];
-            for(k=0; k<totStudents; k++)
-            {
-                name[totStudents] = int[20];
-            }
+            rollNumber = new int[totStudents];
+            stuPhysics = new float[totStudents];
+            stuChem = new float[totStudents];
+            stuMaths = new float[totStudents];
+            name = new string[totStudents];
             
             for(i=0; i<totStudents; i++)
             {
@@ -55,7 +51,7 @@ class Marks
         {
             for(i=0; i<totStudents; i++)
             {
-                cout<<"Roll Number : "<<rollNumber[i]<<endl;
+                cout<<"\n\nRoll Number : "<<rollNumber[i]<<endl;
                 cout<<"Name : "<<name[i]<<endl;
                 cout<<"Physics Marks : "<<stuPhysics[i]<<endl;
                 cout<<"Chemistry Marks : "<<stuChem[i]<<endl;
@@ -69,10 +65,7 @@ class Marks
             delete[] stuPhysics;
             delete[] stuChem;
             delete[] stuMaths;
-            for(i=0; i<totStudents; i++)
-            {
-                delete[] name
-            }
+            delete[] name;
         }
 };
 
