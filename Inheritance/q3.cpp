@@ -5,7 +5,7 @@ Create three other classes inheriting the Marks class, namely Physics, Chemistry
 which are used to define marks in individual subject of each student. Roll number of each student will be generated automatically.
 */
 
-//notcompleted yet
+//notcompleted yet - didn't understand what to include in derived class
 
 #include<iostream>
 
@@ -19,6 +19,8 @@ class Marks
         float *stuPhysics;
         float *stuChem;
         float *stuMaths;
+        float *totalMarks;
+        float *avg;
         int totStudents, i, j, k;
     
     public:
@@ -31,6 +33,8 @@ class Marks
             stuPhysics = new float[totStudents];
             stuChem = new float[totStudents];
             stuMaths = new float[totStudents];
+            totalMarks = new float[totStudents];
+            avg = new float[totStudents];
             name = new string[totStudents];
             
             for(i=0; i<totStudents; i++)
@@ -44,6 +48,8 @@ class Marks
                 cin>>stuChem[i];
                 cout<<"Enter the marks of Mathematics : ";
                 cin>>stuMaths[i];
+                totalMarks[i] = stuPhysics[i] + stuChem[i] + stuMaths[i];
+                avg[i] = totalMarks[i]/3.0;
             }
             
         }
@@ -56,6 +62,8 @@ class Marks
                 cout<<"Physics Marks : "<<stuPhysics[i]<<endl;
                 cout<<"Chemistry Marks : "<<stuChem[i]<<endl;
                 cout<<"Mathematics Marks : "<<stuMaths[i]<<endl;
+                cout<<"Total Marks : "<<totalMarks[i]<<endl;
+                cout<<"Average Marks : "<<avg[i]<<endl;
             }
         }
 
