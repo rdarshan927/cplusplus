@@ -121,7 +121,7 @@ int main()
 
     int user, i;
 
-    for(i=0; i<4; i++)
+    do
     {
         cout<<"1 - Input Details\n2 - Output Details\n3 - Calculate Average\n4 - Exit\nEnter the type : ";
         cin>>user;
@@ -145,7 +145,7 @@ int main()
             cout<<"You have entered an invalid type."<<endl;
             break;
         }
-    }
+    }while((user == 1)|| (user==2) || (user==3) || (user ==4));
 
     return 0;
 }
